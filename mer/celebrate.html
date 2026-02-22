@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Joyeux Anniversaire Meriem 🎂</title>
+  <link rel="stylesheet" href="css/global.css"/>
+  <link rel="stylesheet" href="css/celebrate.css"/>
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
+</head>
+<body>
+
+  <!-- FOND ÉTOILES -->
+  <div class="stars-bg" id="starsBg"></div>
+
+  <!-- EN-TÊTE -->
+  <div class="celebration-header">
+    <div class="main-wish">🎂 Joyeux Anniversaire Meriem ! 🎂</div>
+    <div class="sub-wish">Que cette nouvelle année t'apporte joie, amour et réussite !  ✨</div>
+    <div class="sub-wish">Joyeux anniversaire Meriem je te souhaite tout le bonheur dans ta vie et la réussite dans ton avenir. Tu es une fille qui mérite tout et plus. 🎁</div>
+  </div>
+
+  <!-- SCÈNE : FLEURS + GÂTEAU + FLEURS -->
+  <div class="scene-wrapper">
+
+    <!-- FLEURS GAUCHE -->
+    <div class="flowers-side left">
+      <svg class="flower-svg" width="80" height="100" viewBox="0 0 80 100">
+        <line x1="40" y1="100" x2="40" y2="55" stroke="#4a7c59" stroke-width="3"/>
+        <path d="M40,55 Q30,60 28,50 Q26,40 36,42 Q38,37 42,42 Q52,40 50,50 Q48,60 40,55Z" fill="#ec4899"/>
+        <circle cx="40" cy="52" r="7" fill="#ffd700"/>
+        <path d="M40,55 Q20,50 18,38" stroke="#4a7c59" stroke-width="2" fill="none"/>
+      </svg>
+      <svg class="flower-svg" width="70" height="90" viewBox="0 0 70 90">
+        <line x1="35" y1="90" x2="35" y2="48" stroke="#4a7c59" stroke-width="3"/>
+        <path d="M35,48 Q22,52 20,40 Q18,28 30,32 Q32,25 38,32 Q50,28 48,40 Q46,52 35,48Z" fill="#ef4444"/>
+        <circle cx="35" cy="45" r="6" fill="#fbbf24"/>
+      </svg>
+      <svg class="flower-svg" width="75" height="95" viewBox="0 0 75 95">
+        <line x1="38" y1="95" x2="38" y2="50" stroke="#4a7c59" stroke-width="3"/>
+        <path d="M38,50 Q25,55 23,43 Q21,31 33,35 Q35,28 41,35 Q53,31 51,43 Q49,55 38,50Z" fill="#c084fc"/>
+        <circle cx="38" cy="47" r="6" fill="#fde68a"/>
+        <path d="M38,50 Q55,46 57,33" stroke="#4a7c59" stroke-width="2" fill="none"/>
+      </svg>
+    </div>
+
+    <!-- GÂTEAU CENTRAL -->
+    <div class="cake-container">
+
+      <!-- BOUGIES -->
+      <div class="candles-row" id="candlesRow"></div>
+
+      <!-- GÂTEAU SVG -->
+      <svg id="cakeSVG" width="320" height="280" viewBox="0 0 320 280">
+        <defs>
+          <radialGradient id="cakeTop" cx="50%" cy="30%" r="70%">
+            <stop offset="0%" stop-color="#fff9c4"/>
+            <stop offset="100%" stop-color="#ffe082"/>
+          </radialGradient>
+          <radialGradient id="cakeBot" cx="50%" cy="30%" r="70%">
+            <stop offset="0%" stop-color="#fce4ec"/>
+            <stop offset="100%" stop-color="#f48fb1"/>
+          </radialGradient>
+          <filter id="softShadow" x="-20%" y="-20%" width="140%" height="140%">
+            <feDropShadow dx="0" dy="6" stdDeviation="10" flood-color="#e91e6344" flood-opacity="0.5"/>
+          </filter>
+        </defs>
+
+        <!-- ÉTAGE SUPÉRIEUR -->
+        <rect x="65" y="75" width="190" height="90" rx="8" fill="url(#cakeTop)" filter="url(#softShadow)"/>
+        <rect x="65" y="75" width="190" height="90" rx="8" fill="none" stroke="#d4a017" stroke-width="2.5"/>
+        <ellipse cx="160" cy="76" rx="95" ry="14" fill="#fffde7" stroke="#d4a017" stroke-width="2"/>
+        <rect x="65" y="108" width="190" height="10" fill="#ffd700" opacity="0.7"/>
+
+        <!-- FRAISES HAUT -->
+        <g transform="translate(90,60)"><ellipse rx="9" ry="11" fill="#ef4444"/><ellipse cy="-5" rx="5" ry="3" fill="#4a7c59"/></g>
+        <g transform="translate(135,56)"><ellipse rx="9" ry="11" fill="#ef4444"/><ellipse cy="-5" rx="5" ry="3" fill="#4a7c59"/></g>
+        <g transform="translate(180,58)"><ellipse rx="9" ry="11" fill="#ef4444"/><ellipse cy="-5" rx="5" ry="3" fill="#4a7c59"/></g>
+        <g transform="translate(225,60)"><ellipse rx="9" ry="11" fill="#ef4444"/><ellipse cy="-5" rx="5" ry="3" fill="#4a7c59"/></g>
+
+        <!-- ÉTAGE INFÉRIEUR -->
+        <rect x="30" y="165" width="260" height="95" rx="10" fill="url(#cakeBot)" filter="url(#softShadow)"/>
+        <rect x="30" y="165" width="260" height="95" rx="10" fill="none" stroke="#c2185b" stroke-width="2.5"/>
+        <ellipse cx="160" cy="165" rx="130" ry="18" fill="#fce4ec" stroke="#c2185b" stroke-width="2"/>
+        <rect x="30" y="200" width="260" height="12" fill="#f48fb1" opacity="0.65"/>
+
+        <!-- FRAISES BAS -->
+        <g transform="translate(70,147)"><ellipse rx="10" ry="12" fill="#ef4444"/><ellipse cy="-6" rx="6" ry="3.5" fill="#4a7c59"/></g>
+        <g transform="translate(125,143)"><ellipse rx="10" ry="12" fill="#ef4444"/><ellipse cy="-6" rx="6" ry="3.5" fill="#4a7c59"/></g>
+        <g transform="translate(180,145)"><ellipse rx="10" ry="12" fill="#ef4444"/><ellipse cy="-6" rx="6" ry="3.5" fill="#4a7c59"/></g>
+        <g transform="translate(235,148)"><ellipse rx="10" ry="12" fill="#ef4444"/><ellipse cy="-6" rx="6" ry="3.5" fill="#4a7c59"/></g>
+
+        <!-- GLAÇAGE DÉGOULINANT HAUT -->
+        <g class="drip-path">
+          <path d="M65,75 Q68,88 70,100 Q72,112 74,104 Q76,95 79,104 Q82,114 84,106 Q87,97 91,106 Q95,116 99,108 Q103,99 108,108 Q112,117 117,109 Q121,100 124,110 Q127,120 131,111 Q134,101 137,111 Q140,122 143,113 Q146,103 148,113 Q151,124 153,116 Q155,107 157,116 Q160,126 163,117 Q166,107 169,116 Q172,126 176,117 Q179,107 183,117 Q187,128 190,119 Q193,109 197,119 Q201,130 205,121 Q208,111 212,121 Q215,132 218,122 Q221,112 224,122 Q228,133 233,122 Q237,111 241,121 Q245,131 248,121 Q251,111 255,119 L255,75 Z" fill="#fffde7" opacity="0.9"/>
+        </g>
+
+        <!-- GLAÇAGE DÉGOULINANT BAS -->
+        <g class="drip-path drip-delay">
+          <path d="M30,165 Q40,180 44,195 Q47,210 50,200 Q54,189 58,200 Q62,211 66,202 Q70,193 75,202 Q79,212 83,203 Q87,194 92,204 Q96,214 100,205 Q104,196 109,205 Q113,214 117,206 Q120,197 123,206 Q126,215 129,207 Q132,199 135,207 Q139,216 142,208 Q146,200 149,208 Q153,217 157,208 Q161,199 165,208 Q169,217 173,209 Q177,200 181,209 Q185,218 190,210 Q194,201 199,210 Q203,219 207,211 Q211,202 215,211 Q219,220 224,212 Q228,203 233,212 Q237,221 242,213 Q246,204 250,213 Q254,222 258,213 Q262,204 265,213 Q267,222 270,214 Q273,205 277,213 Q281,222 284,214 Q287,205 290,213 L290,165 Z" fill="#fce4ec" opacity="0.8"/>
+        </g>
+
+        <!-- CHIFFRE 22 -->
+        <text x="160" y="190" text-anchor="middle" font-family="Dancing Script, cursive" font-size="42" fill="#c2185b" font-weight="bold">22</text>
+        <text x="160" y="220" text-anchor="middle" font-family="Dancing Script, cursive" font-size="16" fill="#131212" font-style="italic">ans</text>
+
+        <!-- OMBRE -->
+        <ellipse cx="160" cy="268" rx="140" ry="14" fill="rgba(194,24,91,0.12)"/>
+      </svg>
+
+      <!-- ÉTOILES AUTOUR -->
+      <div class="cake-stars" id="cakeStars"></div>
+    </div>
+
+    <!-- FLEURS DROITE -->
+    <div class="flowers-side right">
+      <svg class="flower-svg" width="75" height="95" viewBox="0 0 75 95">
+        <line x1="38" y1="95" x2="38" y2="50" stroke="#4a7c59" stroke-width="3"/>
+        <path d="M38,50 Q25,55 23,43 Q21,31 33,35 Q35,28 41,35 Q53,31 51,43 Q49,55 38,50Z" fill="#fb923c"/>
+        <circle cx="38" cy="47" r="6" fill="#fde68a"/>
+        <path d="M38,50 Q55,46 57,33" stroke="#4a7c59" stroke-width="2" fill="none"/>
+      </svg>
+      <svg class="flower-svg" width="80" height="105" viewBox="0 0 80 105">
+        <line x1="40" y1="105" x2="40" y2="58" stroke="#4a7c59" stroke-width="3"/>
+        <path d="M40,58 Q27,63 25,51 Q23,39 35,43 Q37,36 43,43 Q55,39 53,51 Q51,63 40,58Z" fill="#f472b6"/>
+        <circle cx="40" cy="55" r="7" fill="#fbbf24"/>
+        <path d="M40,58 Q20,54 18,40" stroke="#4a7c59" stroke-width="2" fill="none"/>
+      </svg>
+      <svg class="flower-svg" width="70" height="90" viewBox="0 0 70 90">
+        <line x1="35" y1="90" x2="35" y2="48" stroke="#4a7c59" stroke-width="3"/>
+        <path d="M35,48 Q22,53 20,41 Q18,29 30,33 Q32,26 38,33 Q50,29 48,41 Q46,53 35,48Z" fill="#f9a8d4"/>
+        <circle cx="35" cy="45" r="6" fill="#fef9c3"/>
+      </svg>
+    </div>
+  </div>
+
+  <!-- BOUTON -->
+  <div class="bottom-section">
+    <button class="btn-gift" onclick="goToGift()">
+      🎁 Appuie ici pour ton cadeau
+    </button>
+  </div>
+
+  <!-- NAVIGATION -->
+  <nav class="page-nav">
+    <a class="nav-arrow prev" href="candle.html" title="Bougie">‹</a>
+    <span class="nav-dot"></span>
+    <span class="nav-dot"></span>
+    <span class="nav-dot active"></span>
+    <span class="nav-dot"></span>
+    <span class="nav-dot"></span>
+    <a class="nav-arrow next" href="bouquet.html" title="Bouquet">›</a>
+  </nav>
+
+  <script>
+    // ===== Étoiles de fond =====
+    const starsBg = document.getElementById('starsBg');
+    for (let i = 0; i < 30; i++) {
+      const s = document.createElement('div');
+      s.classList.add('star-dot');
+      const size = 3 + Math.random() * 6;
+      s.style.width = size + 'px'; s.style.height = size + 'px';
+      s.style.left = (Math.random() * 100) + 'vw';
+      s.style.top  = (Math.random() * 100) + 'vh';
+      s.style.animationDuration = (2 + Math.random() * 3) + 's';
+      s.style.animationDelay    = (-Math.random() * 5) + 's';
+      starsBg.appendChild(s);
+    }
+
+    // ===== Étoiles autour gâteau =====
+    const cakeStars = document.getElementById('cakeStars');
+    const starPos = [
+      {top:'5%',left:'5%'},{top:'15%',right:'5%'},{bottom:'30%',left:'2%'},
+      {bottom:'20%',right:'3%'},{top:'50%',left:'0%'},{top:'45%',right:'0%'},
+      {top:'2%',left:'35%'},{top:'2%',right:'30%'}
+    ];
+    starPos.forEach((pos, i) => {
+      const s = document.createElement('span');
+      s.classList.add('c-star');
+      s.textContent = ['✦','★','✸','⭐','💫'][Math.floor(Math.random() * 5)];
+      Object.assign(s.style, pos);
+      s.style.animationDuration = (1.5 + Math.random() * 2) + 's';
+      s.style.animationDelay    = (i * 0.3) + 's';
+      cakeStars.appendChild(s);
+    });
+
+    // ===== Bougies =====
+    const candlesRow = document.getElementById('candlesRow');
+    const bColors = ['#f9a8d4','#a78bfa','#fcd34d','#6ee7b7','#f87171','#60a5fa'];
+    for (let i = 0; i < 8; i++) {
+      const wrap = document.createElement('div');
+      wrap.classList.add('mini-candle');
+      const col = bColors[Math.floor(Math.random() * bColors.length)];
+      wrap.innerHTML = `
+        <div class="mini-flame" style="animation-delay:${i*0.1}s"></div>
+        <div class="mini-wick"></div>
+        <div class="mini-body" style="background:linear-gradient(to bottom, ${col}, #fff)"></div>
+      `;
+      candlesRow.appendChild(wrap);
+    }
+
+    // ===== Confettis =====
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        confetti({ particleCount:150, spread:90, origin:{y:0.4}, colors:['#ff6b9d','#ffd700','#a78bfa','#6ee7b7','#f97316','#fff'] });
+        setTimeout(() => {
+          confetti({ particleCount:60, angle:60,  spread:55, origin:{x:0,y:0.5} });
+          confetti({ particleCount:60, angle:120, spread:55, origin:{x:1,y:0.5} });
+        }, 400);
+        setTimeout(() => {
+          confetti({ particleCount:80, spread:120, origin:{y:0.3}, colors:['#ec4899','#fbbf24','#34d399','#60a5fa'] });
+        }, 1000);
+      }, 500);
+    });
+
+    // ===== Navigation =====
+    function goToGift() {
+      document.body.classList.add('leaving');
+      setTimeout(() => { window.location.href = 'bouquet.html'; }, 800);
+    }
+  </script>
+</body>
+</html>

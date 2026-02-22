@@ -1,0 +1,159 @@
+/* ============================================================
+   CELEBRATE.CSS — Page 3 : Félicitations + Gâteau 22 ans
+   ============================================================ */
+
+body {
+  background: linear-gradient(160deg, #fff0f8 0%, #fce4ec 40%, #f3e5f5 100%);
+  min-height: 100vh;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: flex-start;
+  padding: 40px 20px 60px; gap: 0;
+}
+
+/* Étoiles de fond */
+.stars-bg {
+  position: fixed; inset: 0;
+  pointer-events: none; z-index: 0; overflow: hidden;
+}
+.star-dot {
+  position: absolute; border-radius: 50%;
+  background: gold;
+  animation: starTwinkle ease-in-out infinite;
+}
+@keyframes starTwinkle {
+  0%, 100% { opacity: 0.2; transform: scale(0.8); }
+  50%      { opacity: 1; transform: scale(1.4); }
+}
+
+/* En-tête */
+.celebration-header {
+  position: relative; z-index: 10;
+  text-align: center; margin-bottom: 30px;
+}
+.main-wish {
+  font-family: 'Dancing Script', cursive;
+  font-size: clamp(2.2rem, 6vw, 4.5rem);
+  color: #c2185b;
+  text-shadow: 0 0 20px rgba(233,30,99,0.3);
+  animation: fadeInUp 1s ease 0.3s both; line-height: 1.2;
+}
+.sub-wish {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: clamp(1rem, 2.5vw, 1.4rem);
+  color: #ad1457; letter-spacing: 2px;
+  margin-top: 8px; animation: fadeInUp 1s ease 0.7s both;
+}
+
+/* Conteneur scène */
+.scene-wrapper {
+  position: relative; z-index: 10;
+  display: flex; align-items: flex-end;
+  justify-content: center; gap: 0;
+  width: 100%; max-width: 900px;
+}
+
+/* Fleurs latérales */
+.flowers-side {
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: flex-end;
+  gap: 8px; padding-bottom: 60px; opacity: 0;
+}
+.flowers-side.left  { animation: fadeInLeft 1.2s ease 1.5s forwards; }
+.flowers-side.right { animation: fadeInRight 1.2s ease 1.5s forwards; }
+.flower-svg { animation: sway 3s ease-in-out infinite alternate; }
+.flower-svg:nth-child(2) { animation-delay: 0.5s; }
+.flower-svg:nth-child(3) { animation-delay: 1s; }
+@keyframes sway {
+  from { transform: rotate(-5deg) translateY(0); }
+  to   { transform: rotate(5deg) translateY(-6px); }
+}
+
+/* Gâteau */
+.cake-container {
+  display: flex; flex-direction: column;
+  align-items: center; position: relative;
+  animation: cakeEntrance 1.2s cubic-bezier(0.34,1.56,0.64,1) 0.5s both;
+}
+@keyframes cakeEntrance {
+  from { transform: scale(0.3) translateY(60px); opacity: 0; }
+  to   { transform: scale(1) translateY(0); opacity: 1; }
+}
+
+/* Mini bougies sur gâteau */
+.candles-row {
+  display: flex; gap: 8px;
+  margin-bottom: -4px; z-index: 5;
+}
+.mini-candle { display: flex; flex-direction: column; align-items: center; }
+.mini-flame {
+  width: 12px; height: 18px;
+  background: radial-gradient(ellipse at bottom, #ffd700, #ff6600);
+  border-radius: 50% 50% 30% 30%;
+  animation: flameSmall 0.5s ease-in-out infinite alternate;
+  box-shadow: 0 0 8px #ffd70088;
+}
+@keyframes flameSmall {
+  from { transform: scaleX(0.9) scaleY(1); }
+  to   { transform: scaleX(1.1) scaleY(0.9); }
+}
+.mini-wick { width: 2px; height: 6px; background: #4a2000; }
+.mini-body {
+  width: 14px; height: 30px; border-radius: 3px;
+  background: linear-gradient(to bottom, #f9a8d4, #fff);
+  border: 1px solid #c06090;
+}
+
+/* Glaçage dégoulinant */
+@keyframes drip {
+  0%   { transform: scaleY(0); transform-origin: top; opacity: 0.8; }
+  100% { transform: scaleY(1); transform-origin: top; opacity: 1; }
+}
+.drip-path {
+  animation: drip 2s cubic-bezier(0.34,1.56,0.64,1) 1.2s both;
+  transform-origin: top;
+}
+.drip-delay {
+  animation-delay: 2.7s;
+}
+
+/* Étoiles autour gâteau */
+.cake-stars {
+  position: absolute; inset: -40px;
+  pointer-events: none;
+}
+.c-star {
+  position: absolute; font-size: 1.2rem;
+  animation: sparkle 2s ease-in-out infinite;
+}
+
+/* Bouton cadeau */
+.bottom-section {
+  position: relative; z-index: 10;
+  text-align: center; margin-top: 40px;
+}
+.btn-gift {
+  background: linear-gradient(135deg, #e91e63, #9c27b0, #e91e63);
+  background-size: 200% 200%;
+  animation: btnGrad 3s ease infinite, pulse-glow 2.5s ease-in-out infinite;
+  color: #fff;
+  font-family: 'Dancing Script', cursive;
+  font-size: clamp(1.2rem, 3vw, 1.8rem);
+  font-weight: 700; padding: 18px 52px;
+  border: none; border-radius: 60px;
+  cursor: pointer; letter-spacing: 1px;
+  transition: transform 0.3s ease;
+  box-shadow: 0 8px 32px rgba(233,30,99,0.35);
+}
+@keyframes btnGrad {
+  0%, 100% { background-position: 0% 50%; }
+  50%      { background-position: 100% 50%; }
+}
+.btn-gift:hover { transform: translateY(-5px) scale(1.06); }
+.message-under-btn {
+  margin-top: 14px;
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic; color: #ad1457;
+  font-size: 1rem; letter-spacing: 1px;
+  animation: fadeIn 1s ease 3s both;
+}

@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Un Bouquet pour Meriem 🌹</title>
+  <link rel="stylesheet" href="css/global.css"/>
+  <link rel="stylesheet" href="css/bouquet.css"/>
+</head>
+<body>
+
+  <!-- PARTICULES CANVAS -->
+  <canvas id="particleCanvas"></canvas>
+
+  <!-- LUMIÈRE AMBIANTE -->
+  <div class="ambient-light"></div>
+
+  <div class="page-wrapper">
+
+    <!-- CITATION GAUCHE -->
+    <div class="side-text left-text">
+      <div class="quote-frame">
+        <span class="ornament top">✦ — ✦</span>
+        <p class="quote-en">"She loves flowers<br/>but she doesn't know<br/>she is a flower 🌷"</p>
+        <span class="ornament bottom">✦ — ✦</span>
+      </div>
+    </div>
+
+    <!-- CENTRE : BOUQUET & MESSAGE -->
+    <div class="center-col">
+      <h1 class="bouquet-title">
+        <span class="title-deco">✿</span>
+        Un bouquet pour toi
+        <span class="title-deco">✿</span>
+      </h1>
+
+      <!-- BOUQUET SVG — Roses rouges & blanches -->
+      <div class="bouquet-wrapper" id="bouquetArea">
+        <div class="bouquet-glow"></div>
+        <svg id="bouquetSway" class="bouquet-sway" width="400" height="480" viewBox="0 0 400 480">
+          <!-- TIGES -->
+          <g class="stem-group">
+            <line x1="200" y1="480" x2="155" y2="200" stroke="#3d7c47" stroke-width="3" class="stem" style="--delay:0s"/>
+            <line x1="200" y1="480" x2="200" y2="160" stroke="#3d7c47" stroke-width="3" class="stem" style="--delay:0.1s"/>
+            <line x1="200" y1="480" x2="245" y2="195" stroke="#3d7c47" stroke-width="3" class="stem" style="--delay:0.2s"/>
+            <line x1="200" y1="480" x2="120" y2="225" stroke="#3d7c47" stroke-width="3" class="stem" style="--delay:0.3s"/>
+            <line x1="200" y1="480" x2="280" y2="220" stroke="#3d7c47" stroke-width="3" class="stem" style="--delay:0.4s"/>
+            <line x1="200" y1="480" x2="170" y2="170" stroke="#3d7c47" stroke-width="3" class="stem" style="--delay:0.15s"/>
+            <line x1="200" y1="480" x2="230" y2="175" stroke="#3d7c47" stroke-width="3" class="stem" style="--delay:0.25s"/>
+            <line x1="200" y1="480" x2="100" y2="245" stroke="#2d6a3a" stroke-width="2.5" class="stem" style="--delay:0.35s"/>
+            <line x1="200" y1="480" x2="300" y2="240" stroke="#2d6a3a" stroke-width="2.5" class="stem" style="--delay:0.45s"/>
+            <line x1="200" y1="480" x2="140" y2="185" stroke="#2d6a3a" stroke-width="2.5" class="stem" style="--delay:0.5s"/>
+            <line x1="200" y1="480" x2="260" y2="185" stroke="#2d6a3a" stroke-width="2.5" class="stem" style="--delay:0.55s"/>
+          </g>
+
+          <!-- FEUILLES -->
+          <path d="M175,380 Q140,365 125,340" stroke="#4a7c59" stroke-width="2" fill="none"/>
+          <ellipse cx="121" cy="337" rx="14" ry="6" fill="#4a7c59" transform="rotate(-50,121,337)"/>
+          <path d="M220,370 Q255,350 270,325" stroke="#4a7c59" stroke-width="2" fill="none"/>
+          <ellipse cx="273" cy="322" rx="14" ry="6" fill="#4a7c59" transform="rotate(50,273,322)"/>
+          <path d="M185,410 Q145,395 130,375" stroke="#3d7c47" stroke-width="2" fill="none"/>
+          <ellipse cx="127" cy="372" rx="11" ry="5" fill="#3d7c47" transform="rotate(-40,127,372)"/>
+          <path d="M215,400 Q260,388 278,365" stroke="#3d7c47" stroke-width="2" fill="none"/>
+          <ellipse cx="281" cy="362" rx="11" ry="5" fill="#3d7c47" transform="rotate(45,281,362)"/>
+
+          <!-- ROSES — Rangée du bas (5 roses, plus grandes) -->
+          <!-- Rose Rouge 1 -->
+          <g class="flower-bloom" style="--bloom-delay:0.4s">
+            <circle cx="120" cy="248" r="20" fill="#9b1c1c" opacity="0.6"/>
+            <circle cx="107" cy="240" r="19" fill="#b91c1c" opacity="0.65"/>
+            <circle cx="133" cy="240" r="19" fill="#dc2626" opacity="0.65"/>
+            <circle cx="110" cy="253" r="18" fill="#dc2626" opacity="0.6"/>
+            <circle cx="130" cy="255" r="18" fill="#b91c1c" opacity="0.6"/>
+            <circle cx="120" cy="235" r="17" fill="#ef4444" opacity="0.7"/>
+            <circle cx="120" cy="245" r="10" fill="#7f1d1d"/>
+            <circle cx="118" cy="243" r="4" fill="#fca5a5" opacity="0.35"/>
+          </g>
+          <!-- Rose Blanche 2 -->
+          <g class="flower-bloom" style="--bloom-delay:0.6s">
+            <circle cx="170" cy="240" r="19" fill="#e8e4d4" opacity="0.6"/>
+            <circle cx="157" cy="232" r="18" fill="#f5f0e0" opacity="0.65"/>
+            <circle cx="183" cy="232" r="18" fill="#fffde7" opacity="0.65"/>
+            <circle cx="160" cy="245" r="17" fill="#fefce8" opacity="0.6"/>
+            <circle cx="180" cy="247" r="17" fill="#f5f0e0" opacity="0.6"/>
+            <circle cx="170" cy="227" r="16" fill="#fffef5" opacity="0.7"/>
+            <circle cx="170" cy="237" r="9" fill="#d4c9a0"/>
+            <circle cx="168" cy="235" r="3.5" fill="#fff" opacity="0.4"/>
+          </g>
+          <!-- Rose Rouge 3 -->
+          <g class="flower-bloom" style="--bloom-delay:0.8s">
+            <circle cx="230" cy="240" r="19" fill="#991b1b" opacity="0.6"/>
+            <circle cx="217" cy="232" r="18" fill="#b91c1c" opacity="0.65"/>
+            <circle cx="243" cy="232" r="18" fill="#dc2626" opacity="0.65"/>
+            <circle cx="220" cy="245" r="17" fill="#dc2626" opacity="0.6"/>
+            <circle cx="240" cy="247" r="17" fill="#b91c1c" opacity="0.6"/>
+            <circle cx="230" cy="227" r="16" fill="#ef4444" opacity="0.7"/>
+            <circle cx="230" cy="237" r="9" fill="#7f1d1d"/>
+            <circle cx="228" cy="235" r="3.5" fill="#fca5a5" opacity="0.35"/>
+          </g>
+          <!-- Rose Blanche 4 -->
+          <g class="flower-bloom" style="--bloom-delay:1.0s">
+            <circle cx="280" cy="248" r="20" fill="#e8e4d4" opacity="0.6"/>
+            <circle cx="267" cy="240" r="19" fill="#f5f0e0" opacity="0.65"/>
+            <circle cx="293" cy="240" r="19" fill="#fffde7" opacity="0.65"/>
+            <circle cx="270" cy="253" r="18" fill="#fefce8" opacity="0.6"/>
+            <circle cx="290" cy="255" r="18" fill="#f5f0e0" opacity="0.6"/>
+            <circle cx="280" cy="235" r="17" fill="#fffef5" opacity="0.7"/>
+            <circle cx="280" cy="245" r="10" fill="#d4c9a0"/>
+            <circle cx="278" cy="243" r="4" fill="#fff" opacity="0.4"/>
+          </g>
+          <!-- Rose Rouge 5 (bord gauche) -->
+          <g class="flower-bloom" style="--bloom-delay:1.2s">
+            <circle cx="95" cy="260" r="17" fill="#9b1c1c" opacity="0.55"/>
+            <circle cx="85" cy="254" r="16" fill="#b91c1c" opacity="0.6"/>
+            <circle cx="105" cy="254" r="16" fill="#dc2626" opacity="0.6"/>
+            <circle cx="95" cy="248" r="15" fill="#ef4444" opacity="0.65"/>
+            <circle cx="95" cy="256" r="8" fill="#7f1d1d"/>
+          </g>
+          <!-- Rose Blanche 6 (bord droit) -->
+          <g class="flower-bloom" style="--bloom-delay:1.3s">
+            <circle cx="305" cy="258" r="17" fill="#e8e4d4" opacity="0.55"/>
+            <circle cx="295" cy="252" r="16" fill="#f5f0e0" opacity="0.6"/>
+            <circle cx="315" cy="252" r="16" fill="#fffde7" opacity="0.6"/>
+            <circle cx="305" cy="246" r="15" fill="#fffef5" opacity="0.65"/>
+            <circle cx="305" cy="254" r="8" fill="#d4c9a0"/>
+          </g>
+
+          <!-- ROSES — Rangée du milieu (6 roses) -->
+          <!-- Rose Blanche 7 -->
+          <g class="flower-bloom" style="--bloom-delay:1.5s">
+            <circle cx="140" cy="215" r="18" fill="#e8e4d4" opacity="0.6"/>
+            <circle cx="128" cy="208" r="17" fill="#f5f0e0" opacity="0.65"/>
+            <circle cx="152" cy="208" r="17" fill="#fffde7" opacity="0.65"/>
+            <circle cx="130" cy="220" r="16" fill="#fefce8" opacity="0.6"/>
+            <circle cx="150" cy="222" r="16" fill="#f5f0e0" opacity="0.6"/>
+            <circle cx="140" cy="203" r="15" fill="#fffef5" opacity="0.7"/>
+            <circle cx="140" cy="212" r="8" fill="#d4c9a0"/>
+          </g>
+          <!-- Rose Rouge 8 -->
+          <g class="flower-bloom" style="--bloom-delay:1.7s">
+            <circle cx="200" cy="210" r="19" fill="#991b1b" opacity="0.6"/>
+            <circle cx="187" cy="202" r="18" fill="#b91c1c" opacity="0.65"/>
+            <circle cx="213" cy="202" r="18" fill="#dc2626" opacity="0.65"/>
+            <circle cx="190" cy="215" r="17" fill="#dc2626" opacity="0.6"/>
+            <circle cx="210" cy="217" r="17" fill="#b91c1c" opacity="0.6"/>
+            <circle cx="200" cy="197" r="16" fill="#ef4444" opacity="0.7"/>
+            <circle cx="200" cy="207" r="9" fill="#7f1d1d"/>
+          </g>
+          <!-- Rose Blanche 9 -->
+          <g class="flower-bloom" style="--bloom-delay:1.9s">
+            <circle cx="260" cy="215" r="18" fill="#e8e4d4" opacity="0.6"/>
+            <circle cx="248" cy="208" r="17" fill="#f5f0e0" opacity="0.65"/>
+            <circle cx="272" cy="208" r="17" fill="#fffde7" opacity="0.65"/>
+            <circle cx="250" cy="220" r="16" fill="#fefce8" opacity="0.6"/>
+            <circle cx="270" cy="222" r="16" fill="#f5f0e0" opacity="0.6"/>
+            <circle cx="260" cy="203" r="15" fill="#fffef5" opacity="0.7"/>
+            <circle cx="260" cy="212" r="8" fill="#d4c9a0"/>
+          </g>
+          <!-- Rose Rouge 10 (entre) -->
+          <g class="flower-bloom" style="--bloom-delay:2.0s">
+            <circle cx="108" cy="228" r="16" fill="#991b1b" opacity="0.55"/>
+            <circle cx="98" cy="222" r="15" fill="#b91c1c" opacity="0.6"/>
+            <circle cx="118" cy="222" r="15" fill="#dc2626" opacity="0.6"/>
+            <circle cx="108" cy="217" r="14" fill="#ef4444" opacity="0.65"/>
+            <circle cx="108" cy="224" r="7" fill="#7f1d1d"/>
+          </g>
+          <!-- Rose Blanche 11 (entre) -->
+          <g class="flower-bloom" style="--bloom-delay:2.1s">
+            <circle cx="292" cy="228" r="16" fill="#e8e4d4" opacity="0.55"/>
+            <circle cx="282" cy="222" r="15" fill="#f5f0e0" opacity="0.6"/>
+            <circle cx="302" cy="222" r="15" fill="#fffde7" opacity="0.6"/>
+            <circle cx="292" cy="217" r="14" fill="#fffef5" opacity="0.65"/>
+            <circle cx="292" cy="224" r="7" fill="#d4c9a0"/>
+          </g>
+
+          <!-- ROSES — Rangée du haut (5 roses) -->
+          <!-- Rose Rouge 12 -->
+          <g class="flower-bloom" style="--bloom-delay:2.3s">
+            <circle cx="155" cy="185" r="17" fill="#991b1b" opacity="0.6"/>
+            <circle cx="143" cy="178" r="16" fill="#b91c1c" opacity="0.65"/>
+            <circle cx="167" cy="178" r="16" fill="#dc2626" opacity="0.65"/>
+            <circle cx="145" cy="190" r="15" fill="#dc2626" opacity="0.6"/>
+            <circle cx="165" cy="192" r="15" fill="#b91c1c" opacity="0.6"/>
+            <circle cx="155" cy="173" r="14" fill="#ef4444" opacity="0.7"/>
+            <circle cx="155" cy="182" r="8" fill="#7f1d1d"/>
+          </g>
+          <!-- Rose Blanche 13 -->
+          <g class="flower-bloom" style="--bloom-delay:2.5s">
+            <circle cx="200" cy="178" r="17" fill="#e8e4d4" opacity="0.6"/>
+            <circle cx="188" cy="171" r="16" fill="#f5f0e0" opacity="0.65"/>
+            <circle cx="212" cy="171" r="16" fill="#fffde7" opacity="0.65"/>
+            <circle cx="190" cy="183" r="15" fill="#fefce8" opacity="0.6"/>
+            <circle cx="210" cy="185" r="15" fill="#f5f0e0" opacity="0.6"/>
+            <circle cx="200" cy="166" r="14" fill="#fffef5" opacity="0.7"/>
+            <circle cx="200" cy="175" r="8" fill="#d4c9a0"/>
+          </g>
+          <!-- Rose Rouge 14 -->
+          <g class="flower-bloom" style="--bloom-delay:2.7s">
+            <circle cx="245" cy="185" r="17" fill="#991b1b" opacity="0.6"/>
+            <circle cx="233" cy="178" r="16" fill="#b91c1c" opacity="0.65"/>
+            <circle cx="257" cy="178" r="16" fill="#dc2626" opacity="0.65"/>
+            <circle cx="235" cy="190" r="15" fill="#dc2626" opacity="0.6"/>
+            <circle cx="255" cy="192" r="15" fill="#b91c1c" opacity="0.6"/>
+            <circle cx="245" cy="173" r="14" fill="#ef4444" opacity="0.7"/>
+            <circle cx="245" cy="182" r="8" fill="#7f1d1d"/>
+          </g>
+          <!-- Rose Rouge petite 15 -->
+          <g class="flower-bloom" style="--bloom-delay:2.9s">
+            <circle cx="130" cy="198" r="14" fill="#9b1c1c" opacity="0.5"/>
+            <circle cx="121" cy="193" r="13" fill="#b91c1c" opacity="0.55"/>
+            <circle cx="139" cy="193" r="13" fill="#dc2626" opacity="0.55"/>
+            <circle cx="130" cy="189" r="12" fill="#ef4444" opacity="0.6"/>
+            <circle cx="130" cy="195" r="6" fill="#7f1d1d"/>
+          </g>
+          <!-- Rose Blanche petite 16 -->
+          <g class="flower-bloom" style="--bloom-delay:3.0s">
+            <circle cx="270" cy="198" r="14" fill="#e8e4d4" opacity="0.5"/>
+            <circle cx="261" cy="193" r="13" fill="#f5f0e0" opacity="0.55"/>
+            <circle cx="279" cy="193" r="13" fill="#fffde7" opacity="0.55"/>
+            <circle cx="270" cy="189" r="12" fill="#fffef5" opacity="0.6"/>
+            <circle cx="270" cy="195" r="6" fill="#d4c9a0"/>
+          </g>
+
+          <!-- ROSES — Sommet (3 roses) -->
+          <!-- Rose Blanche 17 -->
+          <g class="flower-bloom" style="--bloom-delay:3.2s">
+            <circle cx="175" cy="163" r="15" fill="#e8e4d4" opacity="0.55"/>
+            <circle cx="165" cy="157" r="14" fill="#f5f0e0" opacity="0.6"/>
+            <circle cx="185" cy="157" r="14" fill="#fffde7" opacity="0.6"/>
+            <circle cx="175" cy="152" r="13" fill="#fffef5" opacity="0.65"/>
+            <circle cx="175" cy="159" r="7" fill="#d4c9a0"/>
+          </g>
+          <!-- Rose Rouge 18 -->
+          <g class="flower-bloom" style="--bloom-delay:3.4s">
+            <circle cx="218" cy="163" r="15" fill="#991b1b" opacity="0.55"/>
+            <circle cx="208" cy="157" r="14" fill="#b91c1c" opacity="0.6"/>
+            <circle cx="228" cy="157" r="14" fill="#dc2626" opacity="0.6"/>
+            <circle cx="218" cy="152" r="13" fill="#ef4444" opacity="0.65"/>
+            <circle cx="218" cy="159" r="7" fill="#7f1d1d"/>
+          </g>
+          <!-- Rose Blanche 19 (top) -->
+          <g class="flower-bloom" style="--bloom-delay:3.6s">
+            <circle cx="197" cy="148" r="13" fill="#e8e4d4" opacity="0.5"/>
+            <circle cx="189" cy="143" r="12" fill="#f5f0e0" opacity="0.55"/>
+            <circle cx="205" cy="143" r="12" fill="#fffde7" opacity="0.55"/>
+            <circle cx="197" cy="139" r="11" fill="#fffef5" opacity="0.6"/>
+            <circle cx="197" cy="145" r="6" fill="#d4c9a0"/>
+          </g>
+
+          <!-- ÉTINCELLES DÉCORATIVES SVG -->
+          <g class="sparkle-svg">
+            <text x="85" y="200" font-size="14" fill="#ffd700" opacity="0.5">✦</text>
+            <text x="315" y="210" font-size="12" fill="#ffd700" opacity="0.4">✧</text>
+            <text x="200" y="135" font-size="16" fill="#ffd700" opacity="0.5">✦</text>
+            <text x="70" y="260" font-size="10" fill="#ffd700" opacity="0.3">⋆</text>
+            <text x="330" y="255" font-size="11" fill="#ffd700" opacity="0.3">⋆</text>
+          </g>
+
+          <!-- RUBAN -->
+          <g class="ribbon-group">
+            <path d="M160,420 Q200,445 240,420" stroke="#dc2626" stroke-width="7" fill="none" stroke-linecap="round"/>
+            <path d="M160,420 Q148,448 138,460" stroke="#dc2626" stroke-width="4" fill="none" stroke-linecap="round"/>
+            <path d="M240,420 Q252,448 262,460" stroke="#dc2626" stroke-width="4" fill="none" stroke-linecap="round"/>
+          </g>
+        </svg>
+
+        <!-- Particules autour du bouquet -->
+        <div class="sparkles-container" id="bouquetParticles"></div>
+      </div>
+
+      <!-- MESSAGE DANS BOÎTE ÉLÉGANTE -->
+      <div class="message-box">
+        <div class="message-inner">
+          <span class="msg-ornament">❀</span>
+          <p class="typewriter-text" id="typewriter-container"></p>
+          <span id="typewriter-cursor" class="msg-ornament">|</span>
+        </div>
+      </div>
+
+      <!-- BOUTON -->
+      <button class="btn-map" onclick="goToMap()">
+        <span class="btn-shine"></span>
+        <span class="btn-icon">🗺️</span>
+        <span class="btn-label">Voir la distance qui nous sépare</span>
+      </button>
+    </div>
+
+    <!-- CITATION DROITE -->
+    <div class="side-text right-text">
+      <div class="quote-frame right-frame">
+        <span class="ornament top">✦ — ✦</span>
+        <p class="typed-message" id="typedFr"></p>
+        <span id="cursor">|</span>
+        <span class="ornament bottom">✦ — ✦</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- NAVIGATION -->
+  <nav class="page-nav">
+    <a class="nav-arrow prev" href="celebrate.html" title="Célébration">‹</a>
+    <span class="nav-dot"></span>
+    <span class="nav-dot"></span>
+    <span class="nav-dot"></span>
+    <span class="nav-dot active"></span>
+    <span class="nav-dot"></span>
+    <a class="nav-arrow next" href="map.html" title="Carte">›</a>
+  </nav>
+
+  <script src="js/bouquet.js"></script>
+</body>
+</html>

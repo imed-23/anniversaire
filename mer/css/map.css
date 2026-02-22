@@ -1,0 +1,168 @@
+/* ============================================================
+   MAP.CSS — Page 5 : Carte Strasbourg → Annaba
+   ============================================================ */
+
+body {
+  background: linear-gradient(160deg, #0f172a 0%, #1e3a5f 50%, #0f172a 100%);
+  min-height: 100vh;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: flex-start;
+  padding: 30px 15px 50px;
+  color: #fff; overflow-x: hidden;
+}
+
+/* Étoiles nuit */
+.night-stars {
+  position: fixed; inset: 0;
+  pointer-events: none; z-index: 0;
+}
+.nstar {
+  position: absolute; border-radius: 50%;
+  background: #fff;
+  animation: twinkleNight ease-in-out infinite;
+}
+@keyframes twinkleNight {
+  0%, 100% { opacity: 0.2; }
+  50%      { opacity: 1; }
+}
+
+/* Titre */
+.map-title {
+  position: relative; z-index: 10;
+  font-family: 'Dancing Script', cursive;
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  color: #fde68a; text-align: center;
+  margin-bottom: 8px;
+  text-shadow: 0 0 20px rgba(253,230,138,0.5);
+  animation: fadeInUp 1s ease 0.2s both;
+}
+
+/* Badge distance */
+.distance-badge {
+  position: relative; z-index: 10;
+  display: inline-flex; align-items: center; gap: 10px;
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(253,230,138,0.4);
+  border-radius: 60px; padding: 10px 28px;
+  margin-bottom: 20px;
+  animation: fadeInUp 1s ease 0.5s both;
+}
+.distance-badge span {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.2rem, 3vw, 1.8rem);
+  color: #fde68a; font-weight: 700;
+  letter-spacing: 2px;
+}
+.badge-plane {
+  font-size: 1.8rem;
+  animation: planeBounce 2s ease-in-out infinite;
+}
+@keyframes planeBounce {
+  0%, 100% { transform: translateX(0) rotate(-5deg); }
+  50%      { transform: translateX(8px) rotate(5deg); }
+}
+
+/* Layout carte + messages */
+.map-layout {
+  position: relative; z-index: 10;
+  display: flex; align-items: center;
+  justify-content: center; gap: 30px;
+  width: 100%; max-width: 1200px;
+  flex-wrap: wrap;
+}
+
+/* Messages latéraux */
+.side-quote {
+  flex: 1; min-width: 220px; max-width: 280px;
+  text-align: center;
+}
+.side-quote.left  { animation: fadeInLeft 1.4s ease 1s both; }
+.side-quote.right { animation: fadeInRight 1.4s ease 1.2s both; }
+.quote-text {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: clamp(1.05rem, 1.8vw, 1.3rem);
+  color: #e0f0ff; line-height: 1.9;
+}
+.quote-text strong { color: #fde68a; font-style: normal; }
+.quote-line {
+  width: 40px; height: 2px;
+  background: linear-gradient(to right, transparent, #fde68a, transparent);
+  margin: 12px auto;
+}
+
+/* Carte */
+.map-wrapper {
+  flex: 0 0 520px; max-width: 95vw;
+  border-radius: 20px; overflow: hidden;
+  box-shadow: 0 0 0 3px rgba(253,230,138,0.3), 0 20px 60px rgba(0,0,0,0.5);
+  animation: fadeIn 1.2s ease 0.8s both;
+  position: flex; align-items: center; justify-content: center;
+}
+#map {
+  width: 100%; height: 500px;
+  border-radius: 20px;
+}
+
+/* Labels Leaflet */
+.city-label {
+  background: transparent; border: none;
+  font-family: 'Dancing Script', cursive;
+  font-size: 14px; font-weight: 700;
+  color: #1e3a5f; white-space: nowrap;
+  text-shadow: 1px 1px 3px rgba(255,255,255,0.9);
+}
+.plane-icon-wrapper { background: transparent; border: none; }
+
+/* Popup Leaflet */
+.leaflet-popup-content-wrapper {
+  border-radius: 16px !important;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.2) !important;
+  font-family: 'Dancing Script', cursive !important;
+}
+.leaflet-popup-content {
+  font-family: 'Dancing Script', cursive !important;
+  font-size: 1.1rem; color: #1e3a5f;
+  text-align: center;
+}
+
+/* Citation bas */
+.bottom-quote {
+  position: relative; z-index: 10;
+  max-width: 700px; text-align: center;
+  margin-top: 30px;
+  animation: fadeInUp 1.2s ease 2s both;
+}
+.bottom-quote p {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  color: #bfdbfe; line-height: 2;
+}
+.bottom-quote p strong { color: #fde68a; }
+
+/* Bouton retour */
+.back-btn {
+  position: relative; z-index: 10;
+  margin-top: 30px;
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(10px);
+  color: #fde68a;
+  font-family: 'Dancing Script', cursive;
+  font-size: 1.2rem; padding: 12px 36px;
+  border: 1px solid rgba(253,230,138,0.3);
+  border-radius: 60px; cursor: pointer;
+  transition: all 0.3s ease; letter-spacing: 1px;
+}
+.back-btn:hover {
+  background: rgba(253,230,138,0.15);
+  transform: translateY(-3px);
+}
+
+/* Responsive */
+@media (max-width: 800px) {
+  .map-layout { flex-direction: column; }
+  .side-quote { max-width: 90vw; }
+  .map-wrapper { flex: unset; width: 950vw; }
+}

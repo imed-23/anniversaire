@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>La Distance —  💙</title>
+  <link rel="stylesheet" href="css/global.css"/>
+  <link rel="stylesheet" href="css/map.css"/>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/leaflet-ant-path@1.3.0/dist/leaflet-ant-path.js"></script>
+</head>
+<body>
+
+  <!-- ÉTOILES DE FOND -->
+  <div class="night-stars" id="nightStars"></div>
+
+  <!-- TITRE -->
+  <div class="map-header">
+    <h1 class="map-title">La distance ne change rien ✈️</h1>
+    <div class="distance-badge">
+      <span class="dist-number">3 391</span>
+      <span class="dist-unit">km</span>
+    </div>
+  </div>
+
+  <!-- CONTENU PRINCIPAL -->
+  <div class="map-content">
+
+    <!-- CITATION GAUCHE -->
+    <div class="side-quote left-quote">
+      <p>"Distance means nothing when you mean everything💙</p>
+      
+      <span class="q-author">— </span>
+    </div>
+
+    <!-- CARTE -->
+    <div class="map-wrapper">
+      <div id="map"></div>
+    </div>
+
+    <!-- CITATION DROITE -->
+    <div class="side-quote right-quote">
+      <p>"We've already done the hardest part which was finding each other among millions of people and now let's do the easiest thing: to never lose each other."</p>
+      <span class="q-author">— </span>
+    </div>
+  </div>
+
+  <!-- CITATION DU BAS -->
+  <div class="bottom-quote">
+    <p>Même à 3 391 km, tu restes la personne la plus proche de mon cœur 🤍</p>
+  </div>
+
+  <!-- BOUTON RETOUR -->
+  <div class="back-section">
+    <button class="btn-back" onclick="window.location.href='index.html'">
+      🏠 Retour à l'accueil
+    </button>
+  </div>
+
+  <script src="js/map.js"></script>
+</body>
+</html>

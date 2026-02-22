@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Blow The Candle 🕯️</title>
+  <link rel="stylesheet" href="css/global.css"/>
+  <link rel="stylesheet" href="css/candle.css"/>
+</head>
+<body>
+
+  <!-- OVERLAY SOUFFLÉ -->
+  <div class="blown-overlay" id="blownOverlay">
+    <div class="blown-icon">🕯️</div>
+    <div class="blown-text">Soufflée ! 🎉</div>
+    <div class="blown-sub">On y va...</div>
+  </div>
+
+  <!-- TITRE -->
+  <h1 class="blow-title">blow the candle 🕯️</h1>
+
+  <!-- CHIFFRE 22 -->
+  <div class="number-22">22 ans✨</div>
+
+  <!-- BOUGIE SVG -->
+  <div class="candle-scene">
+    <svg id="candleSVG" width="130" height="320" viewBox="0 0 130 320" xmlns="http://www.w3.org/2000/svg">
+      <!-- FLAMME -->
+      <g id="flameGroup">
+        <ellipse cx="65" cy="60" rx="22" ry="10" fill="#ffd000" opacity="0.3"/>
+        <path d="M65,15 C75,30 90,45 80,65 C74,78 55,78 50,65 C40,45 55,30 65,15Z" fill="url(#flameGrad)"/>
+        <path d="M65,30 C70,40 76,52 70,63 C67,69 63,69 60,63 C54,52 60,40 65,30Z" fill="#ff8c00" opacity="0.85"/>
+        <ellipse cx="65" cy="60" rx="7" ry="10" fill="#fff0a0" opacity="0.9"/>
+        <ellipse cx="65" cy="45" rx="28" ry="32" fill="#ffd700" opacity="0.12"/>
+      </g>
+
+      <!-- FUMÉE -->
+      <g id="smokeGroup">
+        <path d="M65,15 Q60,5 65,-5 Q70,-15 65,-25" stroke="#ccc" stroke-width="3" fill="none" opacity="0.6" stroke-linecap="round"/>
+        <path d="M65,15 Q72,3 68,-8 Q64,-20 70,-30" stroke="#ccc" stroke-width="2" fill="none" opacity="0.4" stroke-linecap="round"/>
+      </g>
+
+      <!-- MÈCHE -->
+      <line x1="65" y1="78" x2="65" y2="88" stroke="#5a3010" stroke-width="3" stroke-linecap="round"/>
+
+      <!-- HAUT BOUGIE -->
+      <ellipse cx="65" cy="92" rx="26" ry="10" fill="#e87dcf"/>
+
+      <!-- RAYURES -->
+      <rect x="39" y="92"  width="52" height="28" fill="#f9a8d4" rx="2"/>
+      <rect x="39" y="120" width="52" height="28" fill="#ffffff" rx="2"/>
+      <rect x="39" y="148" width="52" height="28" fill="#f9a8d4" rx="2"/>
+      <rect x="39" y="176" width="52" height="28" fill="#ffffff" rx="2"/>
+      <rect x="39" y="204" width="52" height="28" fill="#f9a8d4" rx="2"/>
+      <rect x="39" y="232" width="52" height="28" fill="#ffffff" rx="2"/>
+      <rect x="39" y="260" width="52" height="28" fill="#f9a8d4" rx="2"/>
+      <rect x="39" y="288" width="52" height="20" fill="#ffffff" rx="2"/>
+
+      <!-- LIGNES RAYURES -->
+      <line x1="39" y1="120" x2="91" y2="120" stroke="#2a0a1a" stroke-width="2.5"/>
+      <line x1="39" y1="148" x2="91" y2="148" stroke="#2a0a1a" stroke-width="2.5"/>
+      <line x1="39" y1="176" x2="91" y2="176" stroke="#2a0a1a" stroke-width="2.5"/>
+      <line x1="39" y1="204" x2="91" y2="204" stroke="#2a0a1a" stroke-width="2.5"/>
+      <line x1="39" y1="232" x2="91" y2="232" stroke="#2a0a1a" stroke-width="2.5"/>
+      <line x1="39" y1="260" x2="91" y2="260" stroke="#2a0a1a" stroke-width="2.5"/>
+      <line x1="39" y1="288" x2="91" y2="288" stroke="#2a0a1a" stroke-width="2.5"/>
+
+      <!-- CONTOUR -->
+      <rect x="39" y="92" width="52" height="216" rx="4" fill="none" stroke="#2a0a1a" stroke-width="3"/>
+
+      <!-- BASE -->
+      <ellipse cx="65" cy="308" rx="26" ry="6" fill="#e87dcf" stroke="#2a0a1a" stroke-width="2"/>
+
+      <defs>
+        <radialGradient id="flameGrad" cx="50%" cy="70%" r="50%">
+          <stop offset="0%" stop-color="#fffacd"/>
+          <stop offset="40%" stop-color="#ffd700"/>
+          <stop offset="100%" stop-color="#ff6600"/>
+        </radialGradient>
+      </defs>
+    </svg>
+  </div>
+
+  <!-- COMPTE À REBOURS -->
+  <div class="countdown-wrapper">
+    <div class="countdown-label">soufflez dans...</div>
+    <div class="timer-ring">
+      <svg width="120" height="120" viewBox="0 0 120 120">
+        <circle class="timer-ring-bg" cx="60" cy="60" r="51"/>
+        <circle class="timer-ring-circle" id="timerRing" cx="60" cy="60" r="51"/>
+      </svg>
+      <div class="timer-inner">
+        <div class="countdown-number" id="countDisplay">5</div>
+      </div>
+    </div>
+    <div class="blow-hint">✨ gardez le suspense... ✨</div>
+  </div>
+
+  <!-- NAVIGATION -->
+  <nav class="page-nav">
+    <a class="nav-arrow prev" href="index.html" title="Accueil">‹</a>
+    <span class="nav-dot"></span>
+    <span class="nav-dot active"></span>
+    <span class="nav-dot"></span>
+    <span class="nav-dot"></span>
+    <span class="nav-dot"></span>
+    <a class="nav-arrow next" style="visibility:hidden">›</a>
+  </nav>
+
+  <script src="js/candle.js"></script>
+</body>
+</html>

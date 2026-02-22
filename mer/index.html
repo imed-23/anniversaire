@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pour Toi 🌸</title>
+  <link rel="stylesheet" href="css/global.css"/>
+  <link rel="stylesheet" href="css/index.css"/>
+</head>
+<body>
+
+  <!-- CONFETTIS -->
+  <div class="confetti-container" id="confettiContainer"></div>
+
+  <!-- BALLONS -->
+  <div class="balloons" id="balloonsContainer"></div>
+
+  <!-- PAILLETTES -->
+  <div class="sparkle-field" id="sparkleField"></div>
+
+  <!-- CŒURS -->
+  <div class="hearts" id="heartsContainer"></div>
+
+  <!-- CONTENU CENTRAL -->
+  <div class="center-content">
+    <div class="roses-top">🌹 🌸 🌺</div>
+    <h1 class="main-title">Pour Toi</h1>
+    <p class="subtitle">un petit cadeau  ✨</p>
+
+    <button class="btn-enter" id="enterBtn" onclick="enterSite()">
+      <span class="shine"></span>
+      ✨ Ouvre ton cadeau ✨
+    </button>
+  </div>
+
+  <!-- NAVIGATION -->
+  <nav class="page-nav">
+    <span class="nav-dot active"></span>
+    <span class="nav-dot"></span>
+    <span class="nav-dot"></span>
+    <span class="nav-dot"></span>
+    <span class="nav-dot"></span>
+    <a class="nav-arrow next" onclick="enterSite()" title="Page suivante">›</a>
+  </nav>
+
+  <script>
+    // ===== Confettis =====
+    const confettiColors = ['#ff85b3','#ffd700','#a855f7','#60d8f5','#ff6b9d','#fff','#ffc0cb','#87ceeb','#98fb98'];
+    const container = document.getElementById('confettiContainer');
+    for (let i = 0; i < 60; i++) {
+      const c = document.createElement('div');
+      c.classList.add('confetto');
+      c.style.left        = Math.random() * 100 + 'vw';
+      c.style.width       = (6 + Math.random() * 10) + 'px';
+      c.style.height      = (6 + Math.random() * 10) + 'px';
+      c.style.background  = confettiColors[Math.floor(Math.random() * confettiColors.length)];
+      c.style.borderRadius = Math.random() > 0.5 ? '50%' : '2px';
+      c.style.animationDuration = (4 + Math.random() * 8) + 's';
+      c.style.animationDelay    = (-Math.random() * 10) + 's';
+      container.appendChild(c);
+    }
+
+    // ===== Ballons =====
+    const balloonColors = ['#ff85b3','#a78bfa','#fcd34d','#6ee7b7','#f87171','#60a5fa','#fb7185'];
+    const balloonsDiv = document.getElementById('balloonsContainer');
+    for (let i = 0; i < 10; i++) {
+      const b = document.createElement('div');
+      b.classList.add('balloon');
+      b.style.left             = (5 + Math.random() * 90) + 'vw';
+      b.style.background       = balloonColors[Math.floor(Math.random() * balloonColors.length)];
+      b.style.width            = (50 + Math.random() * 30) + 'px';
+      b.style.height           = (62 + Math.random() * 38) + 'px';
+      b.style.animationDuration = (12 + Math.random() * 14) + 's';
+      b.style.animationDelay   = (-Math.random() * 15) + 's';
+      balloonsDiv.appendChild(b);
+    }
+
+    // ===== Paillettes =====
+    const sparkleSymbols = ['✦','✧','⋆','★','✩','✸','❋'];
+    const sparkleDiv = document.getElementById('sparkleField');
+    for (let i = 0; i < 25; i++) {
+      const s = document.createElement('span');
+      s.classList.add('sparkle');
+      s.textContent = sparkleSymbols[Math.floor(Math.random() * sparkleSymbols.length)];
+      s.style.left     = (Math.random() * 95) + 'vw';
+      s.style.top      = (Math.random() * 95) + 'vh';
+      s.style.fontSize = (12 + Math.random() * 16) + 'px';
+      s.style.animationDuration = (2 + Math.random() * 3) + 's';
+      s.style.animationDelay    = (-Math.random() * 4) + 's';
+      s.style.color    = Math.random() > 0.5 ? 'gold' : '#fff5e4';
+      sparkleDiv.appendChild(s);
+    }
+
+    // ===== Cœurs =====
+    const heartsDiv = document.getElementById('heartsContainer');
+    const heartSymbols = ['💗','💕','🌸','💫','✨','🌷'];
+    for (let i = 0; i < 12; i++) {
+      const h = document.createElement('span');
+      h.classList.add('heart');
+      h.textContent = heartSymbols[Math.floor(Math.random() * heartSymbols.length)];
+      h.style.left              = (Math.random() * 95) + 'vw';
+      h.style.animationDuration = (6 + Math.random() * 8) + 's';
+      h.style.animationDelay    = (-Math.random() * 10) + 's';
+      h.style.fontSize          = (16 + Math.random() * 20) + 'px';
+      heartsDiv.appendChild(h);
+    }
+
+    // ===== Navigation =====
+    function enterSite() {
+      document.body.classList.add('leaving');
+      setTimeout(() => { window.location.href = 'candle.html'; }, 800);
+    }
+  </script>
+</body>
+</html>
