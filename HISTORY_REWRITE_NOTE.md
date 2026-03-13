@@ -7,12 +7,32 @@ L'historique de la branche `main` a été réécrit avec `git filter-branch` afi
 Les fichiers du site (HTML, CSS, JS, images) sont **identiques** — seules les
 métadonnées des commits (message, hash SHA) ont changé.
 
-Anciens messages → Nouveau message :
+Anciens messages → Nouveaux commits réécrits :
 
-| Ancien message                          | Nouveau message |
-|-----------------------------------------|-----------------|
-| `Initial commit - Site anniversaire Meriem` | `hello world`   |
-| `hello world`                           | `hello world` ✓ |
+| Ancien SHA   | Ancien message                              | Nouveau SHA   | Nouveau message |
+|-------------|---------------------------------------------|---------------|-----------------|
+| `94435eb`   | `Initial commit - Site anniversaire Meriem` | `386bd9e`     | `hello world`   |
+| `4b13460`   | `hello world`                               | `14d7c93`     | `hello world` ✓ |
+
+---
+
+## 🚀 Appliquer la réécriture sur `main` (force-push)
+
+La réécriture a été effectuée localement. Pour l'appliquer sur le dépôt distant,
+le propriétaire du dépôt doit exécuter les commandes suivantes :
+
+```bash
+# 1. Cloner le dépôt (ou se placer dans un clone existant)
+git clone https://github.com/imed-23/anniversaire.git
+cd anniversaire
+
+# 2. Réécrire tous les messages de commits
+FILTER_BRANCH_SQUELCH_WARNING=1 \
+  git filter-branch --msg-filter 'echo "hello world"' -- --all
+
+# 3. Force-push de la branche main réécrite
+git push --force-with-lease origin main
+```
 
 ---
 
@@ -44,22 +64,11 @@ git reset --hard origin/main
 
 ---
 
-## Commandes utilisées pour la réécriture
-
-```bash
-# Réécrire tous les messages de commits sur toutes les branches
-FILTER_BRANCH_SQUELCH_WARNING=1 git filter-branch --msg-filter 'echo "hello world"' -- --all
-
-# Force-push de la branche main réécrite
-git push --force-with-lease origin main
-```
-
----
-
 ## GitHub Pages
 
 Le site reste publié à la même URL :  
 `https://imed-23.github.io/anniversaire/`
 
 Le contenu des fichiers (HTML/CSS/JS) est **inchangé** — seuls les messages de
-commits ont été modifiés. GitHub Pages continuera à fonctionner normalement.
+commits ont été modifiés. GitHub Pages continuera à fonctionner normalement après
+la réécriture.
